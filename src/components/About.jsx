@@ -18,7 +18,7 @@ export default function About() {
         
     <p>
      Resume:{" "}
-     <a href="/resume.docx" target="_blank" rel="noopener noreferrer">
+     <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
      View Resume
      </a>
 </p>
@@ -37,4 +37,5 @@ export default function About() {
       </div>
     </section>
   );
+
 }
