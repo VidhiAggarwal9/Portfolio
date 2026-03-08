@@ -1,0 +1,506 @@
+/* ================================
+   Fonts - Global Cursive
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&display=swap');
+
+* {
+  font-family: 'Dancing Script', cursive !important;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   Global Styles
+================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: linear-gradient(135deg, #8b1a52, #b62072);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================================
+   Navbar Styling
+================================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(30, 27, 43, 0.6);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffb6c1;
+  transform: scale(1.1);
+}
+
+/* ================================
+   Hero Section
+================================= */
+#home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.hero-flashcard {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  position: relative;
+}
+
+.hero-flashcard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.2rem;
+  background: linear-gradient(45deg, #ff9ec9, #ff5ec1, #ff9ec9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-flashcard:hover::before {
+  opacity: 0.2;
+}
+
+.hero-flashcard:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 35px 60px rgba(255,182,193,0.5);
+  border: 1px solid #ffb6c1;
+}
+
+.hero-flashcard img {
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #ffb6c1;
+  margin-bottom: 2rem;
+}
+
+/* ================================
+   About Section
+================================= */
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+.about-desc,
+.about-info {
+  flex: 1 1 400px;
+}
+
+.about-desc h2 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-desc p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.about-info:hover {
+  transform: scale(1.03) translateY(-3px);
+  box-shadow: 0 25px 50px rgba(255,182,193,0.5);
+  border: 1px solid #ffb6c1;
+}
+
+.about-info a {
+  color: #ffb6c1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-info a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   Skills & Focus Section - Enhanced
+================================= */
+#skills {
+  padding: 3rem 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media(min-width:768px){
+  .skills-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(120deg, #ff9ec9, #ff5ec1, #ff9ec9);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 0.15;
+}
+
+.skill-card:hover {
+  transform: scale(1.08) translateY(-6px);
+  box-shadow: 0 20px 50px rgba(255,182,193,0.5);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.category-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #ffe6f0;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.skill-box {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 0.6rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.skill-box:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 16px 35px rgba(255,182,193,0.6);
+  border: 1px solid rgba(255,255,255,0.45);
+  background: linear-gradient(120deg, #ff9ec9, #ff5ec1);
+  color: white;
+}
+/* ================================
+   Projects Section - Flashcards
+================================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media(min-width:768px){
+  .project-grid {
+    grid-template-columns: repeat(2,1fr); /* 2 columns on desktop */
+  }
+}
+
+.project-flashcard {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 1rem 1.2rem; /* reduced padding */
+  max-height: 300px; /* limit max height */
+  overflow: hidden; /* hide overflow if description is too long */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.project-flashcard:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 25px 50px rgba(255,182,193,0.5);
+  border: 1px solid #ffb6c1;
+}
+
+.project-flashcard h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.project-flashcard p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-flashcard a {
+  font-weight: 600;
+  color: #ffb6c1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-flashcard a:hover {
+  text-decoration: underline;
+}
+/* ================================
+   Contact Section Enhancements
+================================= */
+#contact {
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3rem 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 60px rgba(255, 182, 193, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.contact-card h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ffb6c1;
+}
+
+.contact-card p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Links */
+.personal-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2);
+  color: #ffb6c1;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-input {
+  padding: 1rem 1.3rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-textarea {
+  resize: vertical; /* allows vertical resizing */
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #ffb6c1;
+  box-shadow: 0 0 14px rgba(255, 182, 193, 0.6);
+}
+
+/* Button */
+.contact-button {
+  padding: 1.2rem 1.8rem;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(90deg, #ff9ec9, #ff5ec1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 28px rgba(255, 182, 193, 0.6);
+  text-align: center;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(255, 182, 193, 0.8);
+  background: linear-gradient(90deg, #ffb6c1, #ff7bb8);
+}
+
+.contact-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 6px 25px rgba(255, 182, 193, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 2.5rem 2rem;
+  }
+
+  .contact-card h2 {
+    font-size: 2rem;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+
+  .personal-links {
+    gap: 1.5rem;
+  }
+}
+/* ================================
+   Responsive Adjustments
+================================= */
+@media(max-width:768px){
+  #about {
+    flex-direction: column;
+  }
+
+  .about-desc,
+  .about-info {
+    text-align: center;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flashcard,
+  .project-flashcard,
+  .skill-box,
+  .hero-flashcard,
+  .about-info {
+    font-size: 0.95rem;
+  }
+}
